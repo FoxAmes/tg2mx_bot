@@ -60,11 +60,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: msrd0/install-rlottie-action@v1
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install rlottie system library
+        uses: msrd0/install-rlottie-action@v1
+      - name: Install package dependencies
+        run: sudo apt update -y && sudo apt install -y libavdevice-dev
       - name: Build
         run: cargo build --verbose --release
-      - uses: actions/upload-artifact@v4
+      - name: Upload binary artifact
+        uses: actions/upload-artifact@v4
         with:
           name: tg2mx-bot
           path: target/release/tg2mx-bot
