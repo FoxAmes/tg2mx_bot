@@ -64,10 +64,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: Install rlottie system library
-        uses: msrd0/install-rlottie-action@v1
       - name: Install package dependencies
-        run: sudo apt update -y && sudo apt install -y libavdevice-dev
+        run: sudo apt update -y && sudo apt install -y libavdevice-dev librlottie-dev
       - name: Build
         run: cargo build --verbose --release
       - name: Upload binary artifact
