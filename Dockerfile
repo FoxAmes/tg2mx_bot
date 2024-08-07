@@ -2,6 +2,6 @@ FROM scratch
 
 ARG BINARY
 
-ADD ${BINARY} /${BINARY}
+ADD ${BINARY} /init
 
-ENTRYPOINT [ "/${BINARY}" ]
+ENTRYPOINT [ "/init" ]
