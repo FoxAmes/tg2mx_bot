@@ -1,0 +1,7 @@
+FROM scratch
+
+ARG BINARY
+
+ADD ${BINARY} /${BINARY}
+
+ENTRYPOINT [ "/${BINARY}" ]
