@@ -61,6 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: msrd0/install-rlottie-action@v1
       - name: Build
         run: cargo build --verbose --release
       - uses: actions/upload-artifact@v4
